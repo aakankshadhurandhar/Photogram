@@ -9,6 +9,6 @@ export const darkTheme = {
     body: '#363537',
     text: '#FAFAFA',
     toggleBorder: 'white',
-    background: '#999',
-    buttontext:'white',
+    background: 'black',
+    buttontext:'#F9D276',
 }
