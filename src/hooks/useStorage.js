@@ -1,6 +1,6 @@
 //to interact with firebase storage
 import {useEffect,useState} from 'react'
-import { photoStorage,db,timestamp } from '../firebase/config' 
+import { photoStorage,db,timestamp, auth } from '../firebase/config' 
 
 
 
@@ -38,10 +38,17 @@ useEffect(() => {
 async()=>{
     const url=await storageRef.getDownloadURL();
     const createdAt=timestamp();
+    const currentUser = auth.currentUser;
+    const uploaderUID = currentUser.uid;
+    const uploaderName = currentUser.displayName;
+    const uploaderPhotoURL = currentUser.photoURL;
     //add in database 
     noteref.add({
         url:url,
-        createdAt
+        createdAt,
+        uploaderUID,
+        uploaderName,
+        uploaderPhotoURL,
     })
     setUrl(url);
 

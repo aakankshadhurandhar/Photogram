@@ -26,7 +26,7 @@ function UploadForm() {
             <form>
                 <label>
                 <input type="file" onChange={changeHandler}/>
-                <span>+</span>
+                <span style={{color:"#e94560"}}>+</span>
                 </label>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <div className="output">

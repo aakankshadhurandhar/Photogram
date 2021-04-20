@@ -2,10 +2,11 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 
 import DeleteIcon from '@material-ui/icons/Delete';
-import { db } from '../firebase/config';
+import { auth, db } from '../firebase/config';
+import { useAuthState } from 'react-firebase-hooks/auth';
 const noteref=db.collection('images')
 function Modal({ selected,setSelected }) {
-
+const[user]=useAuthState(auth)
     const handleClick = (e) => {
         if (e.target.classList.contains('backdrop')) {
           setSelected(null);
@@ -18,11 +19,11 @@ function Modal({ selected,setSelected }) {
     return (
         <div className="backdrop" onClick={handleClick}>
             <img src={selected.url} alt="enlarged pic"/>
-            <Button variant="contained"
+            {user && <Button variant="contained"
             color="default"
             className="ebut"
             startIcon={<DeleteIcon />}
-            onClick={deleteButtonhandler}></Button>
+            onClick={deleteButtonhandler}></Button>}
         </div>
     )
 }
