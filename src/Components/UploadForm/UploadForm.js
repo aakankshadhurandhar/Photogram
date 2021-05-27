@@ -30,6 +30,7 @@ const UploadForm = () => {
                 <label>
                     <input type="file" onChange = {changeHandler}/>
                     <Backup style = {{fontSize : '60px'}}/>
+                 
                 </label>
             
                 <div className = "output">
