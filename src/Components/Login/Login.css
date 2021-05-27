@@ -1,0 +1,71 @@
+.outer-div-login {
+    margin-bottom: 100px;
+    align-items: center;
+  }
+  
+  .demo-img {
+    text-align: center;
+    margin: 10px auto;
+  }
+  
+  .demo-img img {
+    height: 350px;
+    width: 350px;
+  }
+  
+  .login {
+    padding: 30px;
+    border: 1px solid black;
+    max-width: 400px;
+    margin: 10px auto;
+    text-align: center;
+  }
+  
+  .heading {
+    font-family: "Noto Serif";
+    color: #60a5fa;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .login label {
+    font-size: large;
+    color: black;
+    font-weight: bold;
+    padding-right: 10px;
+  }
+  
+  .login input {
+    font-size: large;
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  .bold {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button {
+    font-size: 16px;
+    margin: 10px;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    background: #60a5fa;
+    color: white;
+    border: none;
+  }
+  
+  .para {
+    font-size: large;
+    margin: 10px;
+    padding: 5px;
+  }
+  

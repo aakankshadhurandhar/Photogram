@@ -1,44 +1,24 @@
 //for displaying images from firestore/databse
 import  { useEffect, useState } from 'react'
-import { db } from '../firebase/config'
+import { db,auth } from '../firebase/config'
 
-const  useFirestore=(collection)=> {
-    const[docs,setDocs]=useState([]);
+const useFirestore = (collection) => {
+    const [docs, setDocs] = useState([]);
+
+    useEffect(() => {
+        db.collection(collection)
+            .where('uid', '==', auth.currentUser.uid)
+            .orderBy('createdAt', 'desc')
+            .onSnapshot((snap) => { 
+                let documents = [];
+                snap.forEach(doc => {
+                    documents.push({...doc.data(), id: doc.id});
+                });
+                setDocs(documents);
+            });
+    }, [collection])
     
-   useEffect(() => {
-    const unsub=db.collection(collection)
-    .orderBy('createdAt','desc')
-    .onSnapshot((snap)=>{
-    let documents=[];
-    //cycle for each'
-    snap.forEach(doc=>{
-        //push data
-        documents.push({
-            ...doc.data(),
-            id:doc.id,
-
-
-
-
-        });
-       
-
-
-
-    });
-    setDocs(documents);
-    
-    
-     });
-return()=>unsub();
-//unsubscribe when function no longer used
-       
-   }, [collection])
-
-
-
-
     return { docs };
 }
 
-export default useFirestore
+export default useFirestore;

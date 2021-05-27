@@ -8,7 +8,8 @@ import './App.css';
 import { useDarkMode } from './hooks/useDarkmode';
 import Toggle from './Components/Darkmode/Toggler'
 
-import Homepage from './Components/Homepage';
+
+import UserAuth from './Components/UserAuth';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Toggle theme={theme} toggleTheme={themeToggler} />
       
         
-          <Homepage />
+        <UserAuth />
        
       
       
