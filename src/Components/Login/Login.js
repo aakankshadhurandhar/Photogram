@@ -27,6 +27,7 @@ import './Login.css'
                         <>
                         <button className = 'button' onClick={loginHandler}>Sign In</button>
                         <p className = 'para'>Don't have account? <span className = 'bold' onClick = {() => setHasAccount(!hasAccount) }>Sign Up</span></p>
+                        <p>guest creds-email:aaku@photogram.com password:1234567</p>
                         </>
                     ):(
                         <>

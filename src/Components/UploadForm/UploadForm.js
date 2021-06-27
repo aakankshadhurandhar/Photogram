@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import ProgressBar from '../Progressbar/ProgressBar';
 import './Uploadform.css';
-import {Backup} from '@material-ui/icons';
 
 const UploadForm = () => {
 
@@ -28,8 +27,10 @@ const UploadForm = () => {
         <div className = 'uploadForm'>
             <form>
                 <label>
+                    
+                   
                     <input type="file" onChange = {changeHandler}/>
-                    <Backup style = {{fontSize : '60px'}}/>
+                    <span>➕</span>
                  
                 </label>
             
